@@ -1,5 +1,5 @@
 # Lav_Patel_Ajax_Redux
-This project specializes in programmatically fetching, processing, and storing data from external API.
+Star Wars API
 
 ## Project Overview
 A responsive web application that interacts with the Star Wars API (SWAPI) to display character information and their associated movie details. This project demonstrates AJAX handling, DOM manipulation, and responsive design principles.
