@@ -1,8 +1,8 @@
-# Lav_Patel_Ajax_Redux
+# Lav_Patel_Het_Shah_Ajax_Redux
 Star Wars API
 
 ## Project Overview
-A responsive web application that interacts with the Star Wars API (SWAPI) to display character information and their associated movie details. This project demonstrates AJAX handling, DOM manipulation, and responsive design principles.
+A responsive web application that interacts with the Star Wars API (SWAPI) to display character information and their associated movie details. This a group project demonstrates AJAX handling, DOM manipulation, and responsive design principles.
 
 
 ## Features
@@ -40,4 +40,5 @@ A responsive web application that interacts with the Star Wars API (SWAPI) to di
 - [SWAPI](https://swapi.dev/)
 
 ## Credits
-- Lav Patel
+- Lav Patel - Developer
+- Het Shah - Designer 
