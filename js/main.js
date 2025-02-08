@@ -22,7 +22,7 @@
           const img = document.createElement("img");
 
           a.textContent = character.name;
-          a.dataset.movies = JSON.stringify(character.films); // Store as JSON string
+          a.dataset.movies = JSON.stringify(character.films); 
 
           img.src = `images/${character.name}.jpg`;
           img.alt = character.name;
@@ -34,13 +34,6 @@
         });
 
         characters.appendChild(ul);
-
-        gsap.from("#characters ul li", {
-          duration: 0.2,
-          y: -50,
-          opacity: 0,
-          stagger: 0.1,
-        });
 
         document.querySelectorAll("#characters li a").forEach((link) => {
           link.addEventListener("click", function (e) {
@@ -58,35 +51,33 @@
 
   function getMovies(e) {
     const loadingSpinner = document.querySelector("#movie-box .loading-spinner");
-    loadingSpinner.style.display = "block"; 
-
-    const filmURLs = JSON.parse(e.currentTarget.dataset.movies); // Parse stored JSON
+    loadingSpinner.style.display = "block";
+  
+    const filmURLs = JSON.parse(e.currentTarget.dataset.movies);
     movieCon.innerHTML = ""; 
-
-    // GSAP Scroll Animation
+  
     gsap.to(window, {
-      duration: 1.2, // Adjust duration for smooth effect
-      scrollTo: { y: "#movie-box", offsetY: 20 }, // Scroll to movie section with some offset
+      duration: 1.2,
+      scrollTo: { y: "#movie-box", offsetY: 20 }, 
       ease: "power2.out",
     });
-
+  
     filmURLs.forEach((filmUrl, index) => {
       fetch(filmUrl)
         .then((response) => response.json())
         .then((filmDetail) => {
           if (index === filmURLs.length - 1) {
-            loadingSpinner.style.display = "none"; 
+            loadingSpinner.style.display = "none";
           }
           const movieElement = createMovieElement(filmDetail);
           movieCon.appendChild(movieElement);
         })
         .catch((error) => {
           console.error("Something went wrong when getting film details:", error);
-          loadingSpinner.style.display = "none"; 
+          loadingSpinner.style.display = "none";
         });
     });
-
-    // Fade-in Animation for Movie Section
+  
     gsap.from("#movie-box", {
       opacity: 0,
       y: 50,
@@ -94,6 +85,7 @@
       ease: "power2.out",
     });
   }
+  
 
   function createMovieElement(movie) {
     const clonedTemplate = document.importNode(movieTemplate.content, true);
