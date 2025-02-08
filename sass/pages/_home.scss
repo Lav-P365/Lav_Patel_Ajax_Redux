@@ -4,54 +4,61 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-  
+
+/* Character Section */
 #characters {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 20px;
 }
 
 #characters h1 {
   border: solid rgb(255, 255, 255) 2px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 32px;
-  margin-top: 50px;
+  font-size: 2rem;
   font-weight: 800;
-
+  margin-bottom: 20px;
+  max-width: 90%;
 }
-  
+
 #characters ul {
   list-style: none;
-  padding: 20px;
-  margin: 20px auto;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); 
-  gap: 20px;
-  justify-content: center; 
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
   align-items: center;
-  max-width: 100%;
-  height: 50%;
 }
 
 #characters li {
-  background: black ;
+  background: black;
   border: solid rgb(255, 255, 255) 1px;
   border-radius: 10px;
-  margin: 50px auto;
-  padding: 15px 10px;
+  padding: 10px;
   cursor: pointer;
   text-align: center;
+  transition: all 0.3s ease-in-out;
 }
 
 #characters li:hover {
-  background: rgba(255, 255, 255, 0.2); 
-  transform: scale(1.1); 
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
 #characters li a {
@@ -59,13 +66,15 @@ body {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 #characters img {
   width: 100%;
+  max-width: 100px;
   border-radius: 5px;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 /* Movie Section */
@@ -74,32 +83,36 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
 }
 
 #movie-box h1 {
   border: solid rgb(255, 255, 255) 2px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 2.5rem;
-  margin-top: 50px;
+  font-size: 2rem;
   font-weight: 800;
-
+  margin-bottom: 20px;
+  max-width: 90%;
 }
 
 #movie-con {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .movie {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
+  background: black;
+  padding: 10px;
   border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .movie:hover {
@@ -108,8 +121,10 @@ body {
 }
 
 .movie-heading {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  color: aliceblue;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 .movie img {
@@ -117,21 +132,45 @@ body {
   border-radius: 5px;
 }
 
+.movie-description {
+  color: aliceblue;
+  font-size: 0.9rem;
+  text-align: center;
+}
 
 @media screen and (max-width: 1024px) {
-  #characters, #movie-con {
-    grid-template-columns: repeat(3, 1fr);
+  #characters ul, #movie-con {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 }
 
 @media screen and (max-width: 768px) {
-  #characters, #movie-con {
-    grid-template-columns: repeat(2, 1fr);
+  #characters ul, #movie-con {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  
+  #characters h1, #movie-box h1 {
+    font-size: 1.8rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  #characters, #movie-con {
-    grid-template-columns: repeat(1, 1fr);
+  #characters ul, #movie-con {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
   }
+
+  #characters h1, #movie-box h1 {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .movie-heading {
+    font-size: 0.9rem;
+  }
+  
+  .movie-description {
+    font-size: 0.8rem;
+  }
 }
