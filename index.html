@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star War API</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script defer src="js/main.js"></script>
+    <title>Ajax Redux</title>
+  </head>
+  <body>
     
-</body>
+   <section class="col-span-full m-col-span-6" id="characters">
+    <h1>CHOOSE YOUR CHARACTER</h1>
+    <div class="loading-spinner"></div>
+   </section>
+
+   <div class="col-span-full m-col-span-9" id="movie-box">
+    <h1>Movies</h1>
+    <div class="loading-spinner"></div>
+    <section id="movie-con">
+      <template id="movie-template">
+        <div class="movie">
+          <h2 class="movie-heading"></h2>
+          <div class="main-container">
+            <img class="movie-poster" src="" alt="Movie Poster" />
+            <p class="movie-description"></p>
+          </div>
+        </div>
+      </template>
+    </section>
+   </div>
+  </body>
 </html>
